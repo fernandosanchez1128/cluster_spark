@@ -23,31 +23,33 @@ from os import listdir
 from pyspark.mllib.feature import Word2Vec
 from elasticsearch import Elasticsearch
 # $example off$
-es = Elasticsearch()
+es = Elasticsearch("127.0.0.1")
 
 if __name__ == "__main__":
 	
     
     sc = SparkContext(appName="Word2VecExample")  # SparkContext
+    #clases = ["alt.atheism", "comp.graphics", "comp.os.ms-windows.misc",  "comp.sys.ibm.pc.hardware", "comp.sys.mac.hardware", "comp.windows.x", "misc.forsale","rec.autos","rec.motorcycles","rec.sport.baseball", "rec.sport.hockey","sci.crypt","sci.electronics","sci.med","sci.space", "soc.religion.christian"]
+    clases = ["talk.politics.guns", "talk.politics.mideast","talk.politics.misc","talk.religion.misc"] 
+    name = "prueba" 
+    #es.indices.delete(index=name, ignore=[400, 404])
 
     # $example on$
-    documentos = [doc for doc in listdir("texts/")]
-    name = "prueba" 
-    es.indices.delete(index=name, ignore=[400, 404])
-    a= 0
-    list_documents = []
-    for doc in documentos:
-		inp = sc.textFile("texts/"+doc)
-		texto = ""
-		texto= inp.map(lambda line: line).reduce(lambda x,y: x+y)
-		print (texto)
-		document = {
-			'name': doc[:1],				# nombre del archivo o documento
-		    'author': "Fernando",			# author de este archivo o documento
-		    'content': texto,		# el contenido de este archivo o documento
-		    'owner': "propietario"  			# propietario, usuario que crea el indice
-		}
-		response = es.index(index="prueba", doc_type= "pdf", body=document)
+    for clase in clases:
+		directorio = "textos/" + clase +"/"
+		documentos = [doc for doc in listdir(directorio)]
+		for doc in documentos:
+			inp = sc.textFile(directorio + doc)
+			texto = ""
+			texto= inp.map(lambda line: line).reduce(lambda x,y: x+y)
+			print (clase)
+			document = {
+				'name': clase,				# nombre del archivo o documento
+				'author': "Fernando",			# author de este archivo o documento
+				'content': texto,		# el contenido de este archivo o documento
+				'owner': "propietario"  			# propietario, usuario que crea el indice
+			}
+			response = es.index(index="prueba", doc_type= "pdf", body=document)	
 	
 	
 	
