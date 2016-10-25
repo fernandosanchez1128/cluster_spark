@@ -79,7 +79,8 @@ def convert_to_row(d):
 
 
 #sentenceData = spark.createDataFrame(data, ["label", "sentence"])
-conf = {"es.resource" : "prueba", "es.nodes" : "127.0.0.1", "es.query" : "?q=name:alt.atheism name:misc.forsale" }
+conf = {"es.resource" : "prueba", "es.nodes" : "127.0.0.1",
+        "es.query" : "?q=name:alt.atheism name:misc.forsale" }
 
 
 rdd = sc.newAPIHadoopRDD("org.elasticsearch.hadoop.mr.EsInputFormat",
@@ -93,7 +94,8 @@ sentenceData = spark.createDataFrame(rowData).persist(StorageLevel.DISK_ONLY)
 print sentenceData.count()
 
 print "tokenizer"
-tokenizer = RegexTokenizer(inputCol="sentence", outputCol="words_complete", pattern="\\W")
+#tokenizer = RegexTokenizer(inputCol="sentence", outputCol="words_complete", pattern="[^a-zA-Z]")
+tokenizer = RegexTokenizer(inputCol="sentence", outputCol="words_complete", pattern="[^a-zA-Z]")
 wordsData = tokenizer.transform(sentenceData).persist(StorageLevel.DISK_ONLY)
 sentenceData.unpersist()
 
@@ -149,7 +151,7 @@ rescaledData = normalizer.transform(tfIdf)
 #inicio de clustering usando kmeans
 
 print "kmeans"
-kmeans = KMeans(k=2, seed=10,initMode="random" )
+kmeans = KMeans(k=2)
 model = kmeans.fit(rescaledData)
 wssse = model.computeCost(rescaledData)
 #~ 
@@ -190,14 +192,5 @@ instancias.show(truncate=False)
 
 #----------------------------------------------------------------------
 #bisecting kmeans
-#~ gmm = GaussianMixture().setK(6).setSeed(1)
-#~ model = gmm.fit(rescaledData)
-#~ transformed = model.transform(rescaledData)
-#~ transformed.show(truncate=True)
-#~ instancias = transformed.groupBy("prediction").count()	
-#~ instancias.show()
-#~ 
-#~ instancias = transformed.groupBy("prediction","label").count().orderBy("count",ascending=False)
-#~ instancias.show()
-#~ 
-
+#bkm = BisectingKMeans().setK(2).setSeed(1)
+#model = bkm.fit(dataset)
