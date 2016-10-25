@@ -1,0 +1,871 @@
+INFO[10/22/2016 01:07:17 PM]: Archvo de log creado
+INFO[10/22/2016 01:07:17 PM]: conectando Spark con ElasticSearch
+INFO[10/22/2016 01:07:44 PM]: Iniciando el preproceamiento del texto
+INFO[10/22/2016 01:07:44 PM]: Tokenizacion del texto
+INFO[10/22/2016 01:07:44 PM]: stemming de los tokens
+INFO[10/22/2016 01:07:44 PM]: Eliminacion de las plabras vacias
+INFO[10/22/2016 01:07:47 PM]: Creando el TF-IDF
+INFO[10/22/2016 01:07:50 PM]: Inicializando el algoritmo Kmeans
+INFO[10/22/2016 01:08:25 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/22/2016 08:26:53 PM]: Archvo de log creado
+INFO[10/22/2016 08:26:53 PM]: conectando Spark con ElasticSearch
+INFO[10/22/2016 08:27:10 PM]: Iniciando el preproceamiento del texto
+INFO[10/22/2016 08:27:10 PM]: Tokenizacion del texto
+INFO[10/22/2016 08:27:10 PM]: stemming de los tokens
+INFO[10/22/2016 08:27:10 PM]: Eliminacion de las plabras vacias
+INFO[10/22/2016 08:27:12 PM]: Creando el TF-IDF
+INFO[10/22/2016 08:27:15 PM]: Inicializando el algoritmo Kmeans
+INFO[10/22/2016 08:27:24 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/22/2016 08:27:42 PM]: Archvo de log creado
+INFO[10/22/2016 08:27:42 PM]: conectando Spark con ElasticSearch
+INFO[10/22/2016 08:27:57 PM]: Iniciando el preproceamiento del texto
+INFO[10/22/2016 08:27:57 PM]: Tokenizacion del texto
+INFO[10/22/2016 08:27:58 PM]: stemming de los tokens
+INFO[10/22/2016 08:27:58 PM]: Eliminacion de las plabras vacias
+INFO[10/22/2016 08:28:00 PM]: Creando el TF-IDF
+INFO[10/22/2016 08:28:03 PM]: Inicializando el algoritmo Kmeans
+INFO[10/22/2016 08:28:14 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/22/2016 08:37:30 PM]: Archvo de log creado
+INFO[10/22/2016 08:37:30 PM]: conectando Spark con ElasticSearch
+INFO[10/22/2016 08:37:44 PM]: Iniciando el preproceamiento del texto
+INFO[10/22/2016 08:37:44 PM]: Tokenizacion del texto
+INFO[10/22/2016 08:37:45 PM]: stemming de los tokens
+INFO[10/22/2016 08:37:45 PM]: Eliminacion de las plabras vacias
+INFO[10/22/2016 08:37:47 PM]: Creando el TF-IDF
+INFO[10/22/2016 08:37:51 PM]: Inicializando el algoritmo Kmeans
+INFO[10/22/2016 08:38:01 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/22/2016 08:39:01 PM]: Archvo de log creado
+INFO[10/22/2016 08:39:01 PM]: conectando Spark con ElasticSearch
+INFO[10/22/2016 08:39:16 PM]: Iniciando el preproceamiento del texto
+INFO[10/22/2016 08:39:16 PM]: Tokenizacion del texto
+INFO[10/22/2016 08:39:17 PM]: stemming de los tokens
+INFO[10/22/2016 08:39:17 PM]: Eliminacion de las plabras vacias
+INFO[10/22/2016 08:39:19 PM]: Creando el TF-IDF
+INFO[10/22/2016 08:39:23 PM]: Inicializando el algoritmo Kmeans
+INFO[10/22/2016 08:39:34 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/22/2016 08:39:48 PM]: Archvo de log creado
+INFO[10/22/2016 08:39:48 PM]: conectando Spark con ElasticSearch
+INFO[10/22/2016 08:40:03 PM]: Iniciando el preproceamiento del texto
+INFO[10/22/2016 08:40:03 PM]: Tokenizacion del texto
+INFO[10/22/2016 08:40:03 PM]: stemming de los tokens
+INFO[10/22/2016 08:40:03 PM]: Eliminacion de las plabras vacias
+INFO[10/22/2016 08:40:06 PM]: Creando el TF-IDF
+INFO[10/22/2016 08:40:09 PM]: Inicializando el algoritmo Kmeans
+INFO[10/22/2016 08:40:19 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/22/2016 08:40:31 PM]: Archvo de log creado
+INFO[10/22/2016 08:40:31 PM]: conectando Spark con ElasticSearch
+INFO[10/22/2016 08:40:47 PM]: Iniciando el preproceamiento del texto
+INFO[10/22/2016 08:40:47 PM]: Tokenizacion del texto
+INFO[10/22/2016 08:40:47 PM]: stemming de los tokens
+INFO[10/22/2016 08:40:47 PM]: Eliminacion de las plabras vacias
+INFO[10/22/2016 08:40:50 PM]: Creando el TF-IDF
+INFO[10/22/2016 08:40:53 PM]: Inicializando el algoritmo Kmeans
+INFO[10/22/2016 08:40:59 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/22/2016 08:41:39 PM]: Archvo de log creado
+INFO[10/22/2016 08:41:39 PM]: conectando Spark con ElasticSearch
+INFO[10/22/2016 08:41:55 PM]: Iniciando el preproceamiento del texto
+INFO[10/22/2016 08:41:55 PM]: Tokenizacion del texto
+INFO[10/22/2016 08:41:55 PM]: stemming de los tokens
+INFO[10/22/2016 08:41:55 PM]: Eliminacion de las plabras vacias
+INFO[10/22/2016 08:41:58 PM]: Creando el TF-IDF
+INFO[10/22/2016 08:42:02 PM]: Inicializando el algoritmo Kmeans
+INFO[10/22/2016 08:42:16 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/22/2016 08:57:01 PM]: Archvo de log creado
+INFO[10/22/2016 08:57:01 PM]: conectando Spark con ElasticSearch
+INFO[10/22/2016 08:57:16 PM]: Iniciando el preproceamiento del texto
+INFO[10/22/2016 08:57:16 PM]: Tokenizacion del texto
+INFO[10/22/2016 08:57:16 PM]: stemming de los tokens
+INFO[10/22/2016 08:57:17 PM]: Eliminacion de las plabras vacias
+INFO[10/22/2016 08:57:19 PM]: Creando el TF-IDF
+INFO[10/22/2016 08:57:23 PM]: Inicializando el algoritmo Kmeans
+INFO[10/22/2016 08:57:36 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/22/2016 11:29:00 PM]: Archvo de log creado
+INFO[10/22/2016 11:29:00 PM]: conectando Spark con ElasticSearch
+INFO[10/22/2016 11:29:16 PM]: Iniciando el preproceamiento del texto
+INFO[10/22/2016 11:29:16 PM]: Tokenizacion del texto
+INFO[10/22/2016 11:29:16 PM]: stemming de los tokens
+INFO[10/22/2016 11:29:16 PM]: Eliminacion de las plabras vacias
+INFO[10/22/2016 11:29:19 PM]: Creando el TF-IDF
+INFO[10/22/2016 11:29:23 PM]: Inicializando el algoritmo Kmeans
+INFO[10/22/2016 11:31:02 PM]: Archvo de log creado
+INFO[10/22/2016 11:31:02 PM]: conectando Spark con ElasticSearch
+INFO[10/22/2016 11:31:19 PM]: Iniciando el preproceamiento del texto
+INFO[10/22/2016 11:31:19 PM]: Tokenizacion del texto
+INFO[10/22/2016 11:31:19 PM]: stemming de los tokens
+INFO[10/22/2016 11:31:19 PM]: Eliminacion de las plabras vacias
+INFO[10/22/2016 11:31:22 PM]: Creando el TF-IDF
+INFO[10/22/2016 11:31:26 PM]: Inicializando el algoritmo Kmeans
+INFO[10/22/2016 11:32:09 PM]: Archvo de log creado
+INFO[10/22/2016 11:32:09 PM]: conectando Spark con ElasticSearch
+INFO[10/22/2016 11:32:24 PM]: Iniciando el preproceamiento del texto
+INFO[10/22/2016 11:32:24 PM]: Tokenizacion del texto
+INFO[10/22/2016 11:32:25 PM]: stemming de los tokens
+INFO[10/22/2016 11:32:25 PM]: Eliminacion de las plabras vacias
+INFO[10/22/2016 11:32:27 PM]: Creando el TF-IDF
+INFO[10/22/2016 11:32:30 PM]: Inicializando el algoritmo Kmeans
+INFO[10/22/2016 11:34:47 PM]: Archvo de log creado
+INFO[10/22/2016 11:34:47 PM]: conectando Spark con ElasticSearch
+INFO[10/22/2016 11:35:02 PM]: Iniciando el preproceamiento del texto
+INFO[10/22/2016 11:35:02 PM]: Tokenizacion del texto
+INFO[10/22/2016 11:35:02 PM]: stemming de los tokens
+INFO[10/22/2016 11:35:02 PM]: Eliminacion de las plabras vacias
+INFO[10/22/2016 11:35:05 PM]: Creando el TF-IDF
+INFO[10/22/2016 11:35:08 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 11:14:51 AM]: Archvo de log creado
+INFO[10/23/2016 11:14:51 AM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 11:15:07 AM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 11:15:07 AM]: Tokenizacion del texto
+INFO[10/23/2016 11:15:07 AM]: stemming de los tokens
+INFO[10/23/2016 11:15:07 AM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 11:15:10 AM]: Creando el TF-IDF
+INFO[10/23/2016 11:15:14 AM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 11:15:35 AM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 11:37:09 AM]: Archvo de log creado
+INFO[10/23/2016 11:37:09 AM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 11:37:39 AM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 11:37:39 AM]: Tokenizacion del texto
+INFO[10/23/2016 11:37:40 AM]: stemming de los tokens
+INFO[10/23/2016 11:37:40 AM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 11:37:43 AM]: Creando el TF-IDF
+INFO[10/23/2016 11:37:47 AM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 11:37:55 AM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 11:38:25 AM]: Archvo de log creado
+INFO[10/23/2016 11:38:25 AM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 11:38:41 AM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 11:38:41 AM]: Tokenizacion del texto
+INFO[10/23/2016 11:38:41 AM]: stemming de los tokens
+INFO[10/23/2016 11:38:41 AM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 11:38:44 AM]: Creando el TF-IDF
+INFO[10/23/2016 11:38:48 AM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 11:38:59 AM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 11:40:38 AM]: Archvo de log creado
+INFO[10/23/2016 11:40:38 AM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 11:40:53 AM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 11:40:53 AM]: Tokenizacion del texto
+INFO[10/23/2016 11:40:53 AM]: stemming de los tokens
+INFO[10/23/2016 11:40:53 AM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 11:40:56 AM]: Creando el TF-IDF
+INFO[10/23/2016 11:40:59 AM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 11:41:07 AM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 11:41:22 AM]: Archvo de log creado
+INFO[10/23/2016 11:41:22 AM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 11:41:37 AM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 11:41:37 AM]: Tokenizacion del texto
+INFO[10/23/2016 11:41:37 AM]: stemming de los tokens
+INFO[10/23/2016 11:41:37 AM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 11:41:40 AM]: Creando el TF-IDF
+INFO[10/23/2016 11:41:43 AM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 11:41:51 AM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 11:42:19 AM]: Archvo de log creado
+INFO[10/23/2016 11:42:19 AM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 11:42:34 AM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 11:42:34 AM]: Tokenizacion del texto
+INFO[10/23/2016 11:42:34 AM]: stemming de los tokens
+INFO[10/23/2016 11:42:34 AM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 11:42:36 AM]: Creando el TF-IDF
+INFO[10/23/2016 11:42:40 AM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 11:42:51 AM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 11:43:37 AM]: Archvo de log creado
+INFO[10/23/2016 11:43:37 AM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 11:43:53 AM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 11:43:53 AM]: Tokenizacion del texto
+INFO[10/23/2016 11:43:53 AM]: stemming de los tokens
+INFO[10/23/2016 11:43:54 AM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 11:43:56 AM]: Creando el TF-IDF
+INFO[10/23/2016 11:44:00 AM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 11:44:12 AM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 11:44:35 AM]: Archvo de log creado
+INFO[10/23/2016 11:44:35 AM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 11:44:50 AM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 11:44:50 AM]: Tokenizacion del texto
+INFO[10/23/2016 11:44:50 AM]: stemming de los tokens
+INFO[10/23/2016 11:44:50 AM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 11:44:53 AM]: Creando el TF-IDF
+INFO[10/23/2016 11:44:57 AM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 11:45:06 AM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 11:48:44 AM]: Archvo de log creado
+INFO[10/23/2016 11:48:44 AM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 11:48:58 AM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 11:48:58 AM]: Tokenizacion del texto
+INFO[10/23/2016 11:48:59 AM]: stemming de los tokens
+INFO[10/23/2016 11:48:59 AM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 11:49:01 AM]: Creando el TF-IDF
+INFO[10/23/2016 11:49:05 AM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 11:49:16 AM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 11:56:38 AM]: Archvo de log creado
+INFO[10/23/2016 11:56:38 AM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 11:56:53 AM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 11:56:53 AM]: Tokenizacion del texto
+INFO[10/23/2016 11:56:54 AM]: stemming de los tokens
+INFO[10/23/2016 11:56:54 AM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 11:56:56 AM]: Creando el TF-IDF
+INFO[10/23/2016 11:57:00 AM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 11:57:09 AM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 11:57:43 AM]: Archvo de log creado
+INFO[10/23/2016 11:57:43 AM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 11:57:58 AM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 11:57:58 AM]: Tokenizacion del texto
+INFO[10/23/2016 11:57:58 AM]: stemming de los tokens
+INFO[10/23/2016 11:57:58 AM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 11:58:00 AM]: Creando el TF-IDF
+INFO[10/23/2016 11:58:03 AM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 11:58:08 AM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 11:58:34 AM]: Archvo de log creado
+INFO[10/23/2016 11:58:34 AM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 11:58:50 AM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 11:58:50 AM]: Tokenizacion del texto
+INFO[10/23/2016 11:58:50 AM]: stemming de los tokens
+INFO[10/23/2016 11:58:50 AM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 11:58:53 AM]: Creando el TF-IDF
+INFO[10/23/2016 11:58:56 AM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 11:59:05 AM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 11:59:47 AM]: Archvo de log creado
+INFO[10/23/2016 11:59:47 AM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 12:00:02 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 12:00:02 PM]: Tokenizacion del texto
+INFO[10/23/2016 12:00:02 PM]: stemming de los tokens
+INFO[10/23/2016 12:00:02 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 12:00:04 PM]: Creando el TF-IDF
+INFO[10/23/2016 12:00:08 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 12:00:16 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 12:01:46 PM]: Archvo de log creado
+INFO[10/23/2016 12:01:46 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 12:02:01 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 12:02:01 PM]: Tokenizacion del texto
+INFO[10/23/2016 12:02:01 PM]: stemming de los tokens
+INFO[10/23/2016 12:02:01 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 12:02:03 PM]: Creando el TF-IDF
+INFO[10/23/2016 12:02:05 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 12:02:10 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 12:03:35 PM]: Archvo de log creado
+INFO[10/23/2016 12:03:35 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 12:03:50 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 12:03:50 PM]: Tokenizacion del texto
+INFO[10/23/2016 12:03:51 PM]: stemming de los tokens
+INFO[10/23/2016 12:03:51 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 12:03:54 PM]: Creando el TF-IDF
+INFO[10/23/2016 12:03:57 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 12:04:06 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 12:05:10 PM]: Archvo de log creado
+INFO[10/23/2016 12:05:10 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 12:05:26 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 12:05:26 PM]: Tokenizacion del texto
+INFO[10/23/2016 12:05:26 PM]: stemming de los tokens
+INFO[10/23/2016 12:05:26 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 12:05:28 PM]: Creando el TF-IDF
+INFO[10/23/2016 12:05:32 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 12:05:39 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 12:06:37 PM]: Archvo de log creado
+INFO[10/23/2016 12:06:37 PM]: conectando Spark con ElasticSearch
+WARNING[10/23/2016 12:06:38 PM]: Ha fallado la comunicacion entre ElasticSearch y Spark
+INFO[10/23/2016 12:06:38 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 12:06:38 PM]: Tokenizacion del texto
+WARNING[10/23/2016 12:06:38 PM]: Ha ocurrido un fallo en el preprocesamiento del texto
+INFO[10/23/2016 12:06:38 PM]: Creando el TF-IDF
+WARNING[10/23/2016 12:06:38 PM]: Ha ocurrido un fallo creando e TF-IDF
+INFO[10/23/2016 12:13:13 PM]: Archvo de log creado
+INFO[10/23/2016 12:13:13 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 12:13:28 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 12:13:28 PM]: Tokenizacion del texto
+INFO[10/23/2016 12:13:28 PM]: stemming de los tokens
+INFO[10/23/2016 12:13:28 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 12:13:31 PM]: Creando el TF-IDF
+INFO[10/23/2016 12:13:34 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 12:13:44 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 12:14:30 PM]: Archvo de log creado
+INFO[10/23/2016 12:14:30 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 12:14:45 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 12:14:45 PM]: Tokenizacion del texto
+INFO[10/23/2016 12:14:45 PM]: stemming de los tokens
+INFO[10/23/2016 12:14:46 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 12:14:48 PM]: Creando el TF-IDF
+INFO[10/23/2016 12:14:52 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 12:15:02 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 12:15:30 PM]: Archvo de log creado
+INFO[10/23/2016 12:15:30 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 12:15:45 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 12:15:45 PM]: Tokenizacion del texto
+INFO[10/23/2016 12:15:45 PM]: stemming de los tokens
+INFO[10/23/2016 12:15:46 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 12:15:48 PM]: Creando el TF-IDF
+INFO[10/23/2016 12:15:51 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 12:16:01 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 12:16:30 PM]: Archvo de log creado
+INFO[10/23/2016 12:16:30 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 12:16:44 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 12:16:44 PM]: Tokenizacion del texto
+INFO[10/23/2016 12:16:45 PM]: stemming de los tokens
+INFO[10/23/2016 12:16:45 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 12:16:47 PM]: Creando el TF-IDF
+INFO[10/23/2016 12:16:51 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 12:17:00 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 12:24:45 PM]: Archvo de log creado
+INFO[10/23/2016 12:24:45 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 12:25:16 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 12:25:16 PM]: Tokenizacion del texto
+INFO[10/23/2016 12:25:17 PM]: stemming de los tokens
+INFO[10/23/2016 12:25:17 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 12:25:19 PM]: Creando el TF-IDF
+INFO[10/23/2016 12:25:23 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 12:25:33 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 12:27:10 PM]: Archvo de log creado
+INFO[10/23/2016 12:27:10 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 12:27:25 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 12:27:25 PM]: Tokenizacion del texto
+INFO[10/23/2016 12:27:25 PM]: stemming de los tokens
+INFO[10/23/2016 12:27:25 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 12:27:28 PM]: Creando el TF-IDF
+INFO[10/23/2016 12:27:31 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 12:27:42 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 12:42:41 PM]: Archvo de log creado
+INFO[10/23/2016 12:42:41 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 12:43:11 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 12:43:11 PM]: Tokenizacion del texto
+INFO[10/23/2016 12:43:12 PM]: stemming de los tokens
+INFO[10/23/2016 12:43:12 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 12:43:15 PM]: Creando el TF-IDF
+INFO[10/23/2016 12:43:19 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 12:43:29 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 12:48:17 PM]: Archvo de log creado
+INFO[10/23/2016 12:48:17 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 12:48:31 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 12:48:31 PM]: Tokenizacion del texto
+INFO[10/23/2016 12:48:32 PM]: stemming de los tokens
+INFO[10/23/2016 12:48:32 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 12:48:34 PM]: Creando el TF-IDF
+INFO[10/23/2016 12:48:38 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 12:48:48 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:01:18 PM]: Archvo de log creado
+INFO[10/23/2016 01:01:18 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:01:33 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:01:33 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:01:33 PM]: stemming de los tokens
+INFO[10/23/2016 01:01:33 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:01:36 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:01:39 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:01:49 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:04:45 PM]: Archvo de log creado
+INFO[10/23/2016 01:04:45 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:05:00 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:05:00 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:05:00 PM]: stemming de los tokens
+INFO[10/23/2016 01:05:00 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:05:03 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:05:07 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:05:16 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:08:49 PM]: Archvo de log creado
+INFO[10/23/2016 01:08:49 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:09:04 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:09:04 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:09:04 PM]: stemming de los tokens
+INFO[10/23/2016 01:09:04 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:09:07 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:09:10 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:09:15 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:09:53 PM]: Archvo de log creado
+INFO[10/23/2016 01:09:53 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:10:08 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:10:08 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:10:08 PM]: stemming de los tokens
+INFO[10/23/2016 01:10:08 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:10:11 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:10:14 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:10:24 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:10:48 PM]: Archvo de log creado
+INFO[10/23/2016 01:10:48 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:11:03 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:11:03 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:11:04 PM]: stemming de los tokens
+INFO[10/23/2016 01:11:04 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:11:06 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:11:10 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:11:19 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:11:49 PM]: Archvo de log creado
+INFO[10/23/2016 01:11:49 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:12:05 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:12:05 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:12:05 PM]: stemming de los tokens
+INFO[10/23/2016 01:12:05 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:12:08 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:12:11 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:12:21 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:12:40 PM]: Archvo de log creado
+INFO[10/23/2016 01:12:40 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:12:55 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:12:55 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:12:55 PM]: stemming de los tokens
+INFO[10/23/2016 01:12:55 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:12:57 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:12:59 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:13:04 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:13:15 PM]: Archvo de log creado
+INFO[10/23/2016 01:13:15 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:13:30 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:13:30 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:13:31 PM]: stemming de los tokens
+INFO[10/23/2016 01:13:31 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:13:33 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:13:37 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:13:47 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:17:05 PM]: Archvo de log creado
+INFO[10/23/2016 01:17:05 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:17:19 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:17:19 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:17:20 PM]: stemming de los tokens
+INFO[10/23/2016 01:17:20 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:17:23 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:17:27 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:17:39 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:18:39 PM]: Archvo de log creado
+INFO[10/23/2016 01:18:39 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:18:53 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:18:53 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:18:54 PM]: stemming de los tokens
+INFO[10/23/2016 01:18:54 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:18:56 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:19:00 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:19:08 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:19:37 PM]: Archvo de log creado
+INFO[10/23/2016 01:19:37 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:19:51 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:19:51 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:19:52 PM]: stemming de los tokens
+INFO[10/23/2016 01:19:52 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:19:54 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:19:58 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:20:10 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:20:59 PM]: Archvo de log creado
+INFO[10/23/2016 01:20:59 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:21:14 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:21:14 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:21:14 PM]: stemming de los tokens
+INFO[10/23/2016 01:21:14 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:21:17 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:21:20 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:21:30 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:23:32 PM]: Archvo de log creado
+INFO[10/23/2016 01:23:32 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:23:47 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:23:47 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:23:48 PM]: stemming de los tokens
+INFO[10/23/2016 01:23:48 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:23:50 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:23:53 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:24:01 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:24:34 PM]: Archvo de log creado
+INFO[10/23/2016 01:24:34 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:24:49 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:24:49 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:24:50 PM]: stemming de los tokens
+INFO[10/23/2016 01:24:50 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:24:52 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:24:56 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:25:04 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:25:20 PM]: Archvo de log creado
+INFO[10/23/2016 01:25:20 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:25:35 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:25:35 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:25:35 PM]: stemming de los tokens
+INFO[10/23/2016 01:25:35 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:25:38 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:25:41 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:25:48 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:26:23 PM]: Archvo de log creado
+INFO[10/23/2016 01:26:23 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:26:38 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:26:38 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:26:38 PM]: stemming de los tokens
+INFO[10/23/2016 01:26:38 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:26:41 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:26:44 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:26:51 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:27:19 PM]: Archvo de log creado
+INFO[10/23/2016 01:27:19 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:27:34 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:27:34 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:27:35 PM]: stemming de los tokens
+INFO[10/23/2016 01:27:35 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:27:37 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:27:41 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:27:50 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:28:25 PM]: Archvo de log creado
+INFO[10/23/2016 01:28:25 PM]: conectando Spark con ElasticSearch
+WARNING[10/23/2016 01:28:25 PM]: Ha fallado la comunicacion entre ElasticSearch y Spark
+INFO[10/23/2016 01:28:25 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:28:25 PM]: Tokenizacion del texto
+WARNING[10/23/2016 01:28:25 PM]: Ha ocurrido un fallo en el preprocesamiento del texto
+INFO[10/23/2016 01:28:25 PM]: Creando el TF-IDF
+WARNING[10/23/2016 01:28:25 PM]: Ha ocurrido un fallo creando e TF-IDF
+INFO[10/23/2016 01:30:50 PM]: Archvo de log creado
+INFO[10/23/2016 01:30:50 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:31:04 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:31:04 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:31:05 PM]: stemming de los tokens
+INFO[10/23/2016 01:31:05 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:31:08 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:31:11 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:31:18 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:31:58 PM]: Archvo de log creado
+INFO[10/23/2016 01:31:58 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:32:12 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:32:12 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:32:13 PM]: stemming de los tokens
+INFO[10/23/2016 01:32:13 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:32:15 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:32:19 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:32:26 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:35:51 PM]: Archvo de log creado
+INFO[10/23/2016 01:35:51 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:36:06 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:36:06 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:36:06 PM]: stemming de los tokens
+INFO[10/23/2016 01:36:06 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:36:08 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:36:11 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:36:22 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:40:58 PM]: Archvo de log creado
+INFO[10/23/2016 01:40:58 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:41:13 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:41:13 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:41:14 PM]: stemming de los tokens
+INFO[10/23/2016 01:41:14 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:41:17 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:41:20 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:41:29 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:42:33 PM]: Archvo de log creado
+INFO[10/23/2016 01:42:33 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:42:49 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:42:49 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:42:49 PM]: stemming de los tokens
+INFO[10/23/2016 01:42:49 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:42:52 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:42:56 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:43:04 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:43:24 PM]: Archvo de log creado
+INFO[10/23/2016 01:43:24 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:43:40 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:43:40 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:43:40 PM]: stemming de los tokens
+INFO[10/23/2016 01:43:40 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:43:42 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:43:44 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:43:49 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:44:00 PM]: Archvo de log creado
+INFO[10/23/2016 01:44:00 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:44:16 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:44:16 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:44:16 PM]: stemming de los tokens
+INFO[10/23/2016 01:44:16 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:44:19 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:44:22 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:44:30 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:45:08 PM]: Archvo de log creado
+INFO[10/23/2016 01:45:08 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:45:24 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:45:24 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:45:24 PM]: stemming de los tokens
+INFO[10/23/2016 01:45:24 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:45:27 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:45:30 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:45:38 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:46:20 PM]: Archvo de log creado
+INFO[10/23/2016 01:46:20 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:46:34 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:46:34 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:46:35 PM]: stemming de los tokens
+INFO[10/23/2016 01:46:35 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:46:37 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:46:41 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:46:48 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:53:35 PM]: Archvo de log creado
+INFO[10/23/2016 01:53:35 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:53:51 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:53:51 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:53:51 PM]: stemming de los tokens
+INFO[10/23/2016 01:53:52 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:53:55 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:53:59 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:54:07 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:54:33 PM]: Archvo de log creado
+INFO[10/23/2016 01:54:33 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:54:47 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:54:47 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:54:48 PM]: stemming de los tokens
+INFO[10/23/2016 01:54:48 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:54:50 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:54:54 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:55:01 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:56:13 PM]: Archvo de log creado
+INFO[10/23/2016 01:56:13 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:56:28 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:56:28 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:56:29 PM]: stemming de los tokens
+INFO[10/23/2016 01:56:29 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:56:31 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:56:35 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:56:43 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:57:18 PM]: Archvo de log creado
+INFO[10/23/2016 01:57:18 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:57:33 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:57:33 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:57:34 PM]: stemming de los tokens
+INFO[10/23/2016 01:57:34 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:57:37 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:57:40 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:57:52 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:58:18 PM]: Archvo de log creado
+INFO[10/23/2016 01:58:18 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:58:32 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:58:32 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:58:33 PM]: stemming de los tokens
+INFO[10/23/2016 01:58:33 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:58:35 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:58:39 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:58:49 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 01:59:20 PM]: Archvo de log creado
+INFO[10/23/2016 01:59:20 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 01:59:36 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 01:59:36 PM]: Tokenizacion del texto
+INFO[10/23/2016 01:59:36 PM]: stemming de los tokens
+INFO[10/23/2016 01:59:36 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 01:59:39 PM]: Creando el TF-IDF
+INFO[10/23/2016 01:59:42 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 01:59:50 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 02:12:35 PM]: Archvo de log creado
+INFO[10/23/2016 02:12:35 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 02:13:00 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 02:13:00 PM]: Tokenizacion del texto
+INFO[10/23/2016 02:13:01 PM]: stemming de los tokens
+INFO[10/23/2016 02:13:01 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 02:13:03 PM]: Creando el TF-IDF
+INFO[10/23/2016 02:13:07 PM]: Inicializando el algoritmo Kmeans
+INFO[10/23/2016 02:13:18 PM]: algoritmo Kmeans finalizado obteniendo los centroides
+INFO[10/23/2016 02:16:33 PM]: Archvo de log creado
+INFO[10/23/2016 02:16:33 PM]: conectando Spark con ElasticSearch
+WARNING[10/23/2016 02:16:37 PM]: Ha fallado la comunicacion entre ElasticSearch y Spark
+INFO[10/23/2016 02:16:37 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 02:16:37 PM]: Tokenizacion del texto
+WARNING[10/23/2016 02:16:37 PM]: Ha ocurrido un fallo en el preprocesamiento del texto
+INFO[10/23/2016 02:16:37 PM]: Creando el TF-IDF
+WARNING[10/23/2016 02:16:37 PM]: Ha ocurrido un fallo creando e TF-IDF
+WARNING[10/23/2016 02:16:37 PM]: algoritmo Kmeans ha fallado
+INFO[10/23/2016 02:16:50 PM]: Archvo de log creado
+INFO[10/23/2016 02:16:50 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 02:17:06 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 02:17:06 PM]: Tokenizacion del texto
+INFO[10/23/2016 02:17:06 PM]: stemming de los tokens
+INFO[10/23/2016 02:17:06 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 02:17:09 PM]: Creando el TF-IDF
+INFO[10/23/2016 02:17:42 PM]: Archvo de log creado
+INFO[10/23/2016 02:17:42 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 02:17:57 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 02:17:57 PM]: Tokenizacion del texto
+INFO[10/23/2016 02:17:58 PM]: stemming de los tokens
+INFO[10/23/2016 02:17:58 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 02:18:00 PM]: Creando el TF-IDF
+INFO[10/23/2016 02:18:28 PM]: Archvo de log creado
+INFO[10/23/2016 02:18:28 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 02:18:43 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 02:18:43 PM]: Tokenizacion del texto
+INFO[10/23/2016 02:18:43 PM]: stemming de los tokens
+INFO[10/23/2016 02:18:43 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 02:18:46 PM]: Creando el TF-IDF
+INFO[10/23/2016 02:19:34 PM]: Archvo de log creado
+INFO[10/23/2016 02:19:34 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 02:19:51 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 02:19:51 PM]: Tokenizacion del texto
+INFO[10/23/2016 02:19:52 PM]: stemming de los tokens
+INFO[10/23/2016 02:19:52 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 02:19:54 PM]: Creando el TF-IDF
+WARNING[10/23/2016 02:19:58 PM]: algoritmo Kmeans ha fallado
+INFO[10/23/2016 02:21:18 PM]: Archvo de log creado
+INFO[10/23/2016 02:21:18 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 02:21:33 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 02:21:33 PM]: Tokenizacion del texto
+INFO[10/23/2016 02:21:34 PM]: stemming de los tokens
+INFO[10/23/2016 02:21:34 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 02:21:36 PM]: Creando el TF-IDF
+WARNING[10/23/2016 02:21:40 PM]: algoritmo Kmeans ha fallado
+INFO[10/23/2016 02:22:37 PM]: Archvo de log creado
+INFO[10/23/2016 02:22:37 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 02:22:52 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 02:22:52 PM]: Tokenizacion del texto
+INFO[10/23/2016 02:22:52 PM]: stemming de los tokens
+INFO[10/23/2016 02:22:52 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 02:22:55 PM]: Creando el TF-IDF
+INFO[10/23/2016 02:23:26 PM]: Archvo de log creado
+INFO[10/23/2016 02:23:26 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 02:23:41 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 02:23:41 PM]: Tokenizacion del texto
+INFO[10/23/2016 02:23:41 PM]: stemming de los tokens
+INFO[10/23/2016 02:23:42 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 02:23:44 PM]: Creando el TF-IDF
+INFO[10/23/2016 02:24:12 PM]: Archvo de log creado
+INFO[10/23/2016 02:24:12 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 02:24:28 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 02:24:28 PM]: Tokenizacion del texto
+INFO[10/23/2016 02:24:29 PM]: stemming de los tokens
+INFO[10/23/2016 02:24:29 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 02:24:31 PM]: Creando el TF-IDF
+INFO[10/23/2016 02:24:56 PM]: Archvo de log creado
+INFO[10/23/2016 02:24:56 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 02:25:11 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 02:25:11 PM]: Tokenizacion del texto
+INFO[10/23/2016 02:25:12 PM]: stemming de los tokens
+INFO[10/23/2016 02:25:12 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 02:25:15 PM]: Creando el TF-IDF
+INFO[10/23/2016 02:25:44 PM]: Archvo de log creado
+INFO[10/23/2016 02:25:44 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 02:25:58 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 02:25:58 PM]: Tokenizacion del texto
+INFO[10/23/2016 02:25:59 PM]: stemming de los tokens
+INFO[10/23/2016 02:25:59 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 02:26:01 PM]: Creando el TF-IDF
+INFO[10/23/2016 02:28:10 PM]: Archvo de log creado
+INFO[10/23/2016 02:28:10 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 02:28:26 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 02:28:26 PM]: Tokenizacion del texto
+INFO[10/23/2016 02:28:26 PM]: stemming de los tokens
+INFO[10/23/2016 02:28:27 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 02:28:29 PM]: Creando el TF-IDF
+INFO[10/23/2016 02:30:04 PM]: Archvo de log creado
+INFO[10/23/2016 02:30:04 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 02:30:21 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 02:30:21 PM]: Tokenizacion del texto
+INFO[10/23/2016 02:30:21 PM]: stemming de los tokens
+INFO[10/23/2016 02:30:22 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 02:30:24 PM]: Creando el TF-IDF
+INFO[10/23/2016 02:33:04 PM]: Archvo de log creado
+INFO[10/23/2016 02:33:04 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 02:33:20 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 02:33:20 PM]: Tokenizacion del texto
+INFO[10/23/2016 02:33:20 PM]: stemming de los tokens
+INFO[10/23/2016 02:33:20 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 02:33:23 PM]: Creando el TF-IDF
+INFO[10/23/2016 02:33:52 PM]: Archvo de log creado
+INFO[10/23/2016 02:33:52 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 02:34:09 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 02:34:09 PM]: Tokenizacion del texto
+INFO[10/23/2016 02:34:09 PM]: stemming de los tokens
+INFO[10/23/2016 02:34:10 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 02:34:12 PM]: Creando el TF-IDF
+INFO[10/23/2016 02:35:06 PM]: Archvo de log creado
+INFO[10/23/2016 02:35:06 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 02:35:23 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 02:35:23 PM]: Tokenizacion del texto
+INFO[10/23/2016 02:35:23 PM]: stemming de los tokens
+INFO[10/23/2016 02:35:23 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 02:35:26 PM]: Creando el TF-IDF
+INFO[10/23/2016 02:36:51 PM]: Archvo de log creado
+INFO[10/23/2016 02:36:51 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 02:37:05 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 02:37:05 PM]: Tokenizacion del texto
+INFO[10/23/2016 02:37:06 PM]: stemming de los tokens
+INFO[10/23/2016 02:37:06 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 02:37:08 PM]: Creando el TF-IDF
+INFO[10/23/2016 02:37:45 PM]: Archvo de log creado
+INFO[10/23/2016 02:37:45 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 02:38:00 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 02:38:00 PM]: Tokenizacion del texto
+INFO[10/23/2016 02:38:00 PM]: stemming de los tokens
+INFO[10/23/2016 02:38:00 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 02:38:03 PM]: Creando el TF-IDF
+INFO[10/23/2016 09:18:32 PM]: Archvo de log creado
+INFO[10/23/2016 09:18:32 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 09:18:48 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 09:18:48 PM]: Tokenizacion del texto
+INFO[10/23/2016 09:18:49 PM]: stemming de los tokens
+INFO[10/23/2016 09:18:49 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 09:18:51 PM]: Creando el Vector de conteo
+WARNING[10/23/2016 09:18:58 PM]: algoritmo Kmeans ha fallado
+INFO[10/23/2016 09:20:23 PM]: Archvo de log creado
+INFO[10/23/2016 09:20:23 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 09:20:40 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 09:20:40 PM]: Tokenizacion del texto
+INFO[10/23/2016 09:20:40 PM]: stemming de los tokens
+INFO[10/23/2016 09:20:40 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 09:20:43 PM]: Creando el Vector de conteo
+WARNING[10/23/2016 09:20:51 PM]: algoritmo Kmeans ha fallado
+INFO[10/23/2016 09:21:19 PM]: Archvo de log creado
+INFO[10/23/2016 09:21:19 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 09:21:35 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 09:21:35 PM]: Tokenizacion del texto
+INFO[10/23/2016 09:21:36 PM]: stemming de los tokens
+INFO[10/23/2016 09:21:36 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 09:21:39 PM]: Creando el Vector de conteo
+INFO[10/23/2016 09:23:16 PM]: Archvo de log creado
+INFO[10/23/2016 09:23:16 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 09:23:33 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 09:23:33 PM]: Tokenizacion del texto
+INFO[10/23/2016 09:23:33 PM]: stemming de los tokens
+INFO[10/23/2016 09:23:34 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 09:23:37 PM]: Creando el TF-IDF
+INFO[10/23/2016 09:24:29 PM]: Archvo de log creado
+INFO[10/23/2016 09:24:29 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 09:24:44 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 09:24:44 PM]: Tokenizacion del texto
+INFO[10/23/2016 09:24:44 PM]: stemming de los tokens
+INFO[10/23/2016 09:24:45 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 09:24:47 PM]: Creando el Vector
+WARNING[10/23/2016 09:25:04 PM]: algoritmo Kmeans ha fallado
+INFO[10/23/2016 09:26:01 PM]: Archvo de log creado
+INFO[10/23/2016 09:26:01 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 09:26:17 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 09:26:17 PM]: Tokenizacion del texto
+INFO[10/23/2016 09:26:18 PM]: stemming de los tokens
+INFO[10/23/2016 09:26:18 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 09:26:20 PM]: Creando el Vector
+WARNING[10/23/2016 09:26:38 PM]: algoritmo Kmeans ha fallado
+INFO[10/23/2016 09:27:08 PM]: Archvo de log creado
+INFO[10/23/2016 09:27:08 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 09:27:23 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 09:27:23 PM]: Tokenizacion del texto
+INFO[10/23/2016 09:27:24 PM]: stemming de los tokens
+INFO[10/23/2016 09:27:24 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 09:27:27 PM]: Creando el Vector
+INFO[10/23/2016 09:29:01 PM]: Archvo de log creado
+INFO[10/23/2016 09:29:01 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 09:29:16 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 09:29:16 PM]: Tokenizacion del texto
+INFO[10/23/2016 09:29:16 PM]: stemming de los tokens
+INFO[10/23/2016 09:29:16 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 09:29:19 PM]: Creando el Vector
+INFO[10/23/2016 09:29:35 PM]: Inicializando el algoritmo BisectingKmeans
+INFO[10/23/2016 09:31:18 PM]: Archvo de log creado
+INFO[10/23/2016 09:31:18 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 09:31:35 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 09:31:35 PM]: Tokenizacion del texto
+INFO[10/23/2016 09:31:35 PM]: stemming de los tokens
+INFO[10/23/2016 09:31:35 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 09:31:38 PM]: Creando el TF-IDF
+INFO[10/23/2016 09:31:42 PM]: Inicializando el algoritmo BisectingKmeans
+INFO[10/23/2016 09:32:16 PM]: Archvo de log creado
+INFO[10/23/2016 09:32:16 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 09:32:31 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 09:32:31 PM]: Tokenizacion del texto
+INFO[10/23/2016 09:32:32 PM]: stemming de los tokens
+INFO[10/23/2016 09:32:32 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 09:32:34 PM]: Creando el Vector de conteo
+INFO[10/23/2016 09:34:52 PM]: Archvo de log creado
+INFO[10/23/2016 09:34:52 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 09:35:07 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 09:35:07 PM]: Tokenizacion del texto
+INFO[10/23/2016 09:35:07 PM]: stemming de los tokens
+INFO[10/23/2016 09:35:08 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 09:35:10 PM]: Creando el Vector de conteo
+WARNING[10/23/2016 09:35:17 PM]: Ha ocurrido un fallo creando el vector de conteo
+WARNING[10/23/2016 09:35:17 PM]: algoritmo Kmeans ha fallado
+INFO[10/23/2016 09:35:35 PM]: Archvo de log creado
+INFO[10/23/2016 09:35:35 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 09:35:51 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 09:35:51 PM]: Tokenizacion del texto
+INFO[10/23/2016 09:35:51 PM]: stemming de los tokens
+INFO[10/23/2016 09:35:51 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 09:35:54 PM]: Creando el Vector de conteo
+INFO[10/23/2016 09:38:00 PM]: Archvo de log creado
+INFO[10/23/2016 09:38:00 PM]: conectando Spark con ElasticSearch
+INFO[10/23/2016 09:38:15 PM]: Iniciando el preproceamiento del texto
+INFO[10/23/2016 09:38:15 PM]: Tokenizacion del texto
+INFO[10/23/2016 09:38:16 PM]: stemming de los tokens
+INFO[10/23/2016 09:38:16 PM]: Eliminacion de las plabras vacias
+INFO[10/23/2016 09:38:18 PM]: Creando el Vector de conteo

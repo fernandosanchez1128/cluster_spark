@@ -19,9 +19,10 @@ from pyspark.ml.clustering import GaussianMixture
 from pyspark.ml.feature import DCT
 from pyspark.ml.linalg import Vectors
 from pyspark.ml.feature import DCT
-from pyspark.sql.types import ArrayType, StringType
+from pyspark.sql.types import ArrayType, StringType, NumericType, IntegralType
 from collections import OrderedDict
 from pyspark import SparkContext
+from pyspark.storagelevel import StorageLevel
 
 import Stemmer
 # -*- coding: utf-8 -*-
@@ -40,6 +41,14 @@ from pyspark.sql.functions import udf
 def stemming(palabras):
 	stemmer = Stemmer.Stemmer('english')
 	return stemmer.stemWords(palabras)
+	
+def clean(palabras):
+	cleaned = []
+	for palabra in palabras:
+		if len (palabra) > 2:
+			cleaned.append(palabra)
+	return cleaned
+
 
 def words (indices):
 	palabras = []
@@ -48,50 +57,44 @@ def words (indices):
 	return palabras
  	
 def convert_to_row(d):
-    text =  d[1]['content']
-    return Row(label = '2', sentence = text)
+	text = d[1]['content']
+	nombre = d[1]['name']
+	return Row(label=nombre, sentence=text)
 
-#~ 
- #~ 
-sentenceData = spark.createDataFrame([
-    (1, "I wish Java could use case classes 0"),
-    (2, "I wish Java could use case classes"),
-    (3, "I wish Java could use case classes 2"),
-    (4, "Esto es un texto de prueba"),
-    (5, "Esto es un texto de prueba 2"),
-    (6, "I wish Java could use case classes 3"),
-    (7, "I wish Java could use case classes 4"),
-    (8, "Esto es un texto de prueba 3"),
-    (9, "Esto es un texto de prueba 4"),
-    (10, "I wish Java could use case classes 5"),
-    (11, "I wish Java could use case classes fndjf djcdkanjan djfnadkf djfakf akf"),
-    (12, "hablando en espaniol aunque hay diversas formas del espaniol solo digo eso esto es una prueba"),
-    (13, "I only wish than this test be ok on all"),
-    (14, "Spark es un framework de analisis distribuido en memoria, el cual fue desarrolado en la universidad de California < > . ' '.")
-], ["label", "sentence"])
+def group(distri):
+    maximo = 0
+    group=0
+    i = 0
+    for val in distri:
+		if val > maximo:
+			group  = i
+			maximo = val
+		i = i+1
+    return str (group)
+			
+conf = {"es.resource" : "prueba", "es.nodes" : "127.0.0.1", "es.query" : "?q=name:alt.atheism name:misc.forsale" }
 
 
-#sentenceData = spark.createDataFrame(data, ["label", "sentence"])
-
-#~ conf = {"es.resource" : "prueba", "es.nodes" : "127.0.0.1"}
-#~ 
-#~ 
-#~ rdd = sc.newAPIHadoopRDD("org.elasticsearch.hadoop.mr.EsInputFormat",
-#~ "org.apache.hadoop.io.NullWritable", 
-#~ "org.elasticsearch.hadoop.mr.LinkedMapWritable", conf=conf)
-
-#sentenceData = sc.parallelize([{"arg1": "", "arg2": ""},{"arg1": "", "arg2": ""},{"arg1": "", "arg2": ""}]).toDF()
-#~ rowData = rdd.map(convert_to_row)
-#~ sentenceData = spark.createDataFrame(rowData)
-#~ sentenceData.show()
+rdd = sc.newAPIHadoopRDD("org.elasticsearch.hadoop.mr.EsInputFormat",
+"org.apache.hadoop.io.NullWritable", 
+"org.elasticsearch.hadoop.mr.LinkedMapWritable", conf=conf).persist(StorageLevel.DISK_ONLY)
 
 
-tokenizer = RegexTokenizer(inputCol="sentence", outputCol="words_complete", pattern="\\W")
+#print rdd.getStorageLevel()
+rowData = rdd.map(convert_to_row)
+sentenceData = spark.createDataFrame(rowData).persist(StorageLevel.DISK_ONLY)
+print sentenceData.count()
+
+tokenizer = RegexTokenizer(inputCol="sentence", outputCol="words_complete", pattern="[^a-zA-Z]")
 wordsData = tokenizer.transform(sentenceData)
-udfStemming=udf(stemming, ArrayType( StringType() ))
-dataStemm = wordsData.withColumn("stemm", udfStemming("words_complete"))
-remover = StopWordsRemover(inputCol="stemm", outputCol="words",stopWords =  StopWordsRemover.loadDefaultStopWords('spanish'))
-dataCleaned = remover.transform(dataStemm)
+
+print "limpieza"
+udfClean=udf(clean, ArrayType( StringType() ))
+dataClean = wordsData.withColumn("cleaned", udfClean("words_complete")).persist(StorageLevel.DISK_ONLY)
+wordsData.unpersist()
+
+remover = StopWordsRemover(inputCol="cleaned", outputCol="words",stopWords =  StopWordsRemover.loadDefaultStopWords('english'))
+dataCleaned = remover.transform(dataClean)
 dataCleaned.select ("words").show(truncate = False)
 
 
@@ -110,34 +113,37 @@ dataCleaned.select ("words").show(truncate = False)
 #---------------------------------------------------------------------------------------
 
 #usado para el clustering de topics
-#~ cv = CountVectorizer(inputCol="words", outputCol="features")
-#~ model = cv.fit(dataCleaned)
-#~ rescaledData = model.transform(dataCleaned)
-#~ vocabulario =  model.vocabulary
+cv = CountVectorizer(inputCol="words", outputCol="features2", minDF=4.0)
+model = cv.fit(dataCleaned)
+featurizedData = model.transform(dataCleaned)
+vocabulario =  model.vocabulary
 
-idf = IDF(inputCol="features2", outputCol="features")	
+
+
+idf = IDF(inputCol="features2", outputCol="features",minDocFreq=10)	
 idfModel = idf.fit(featurizedData)
 rescaledData = idfModel.transform(featurizedData)
-#~ #dct = DCT(inverse=False, inputCol="featuresL", outputCol="features")
-#~ #rescaledData = dct.transform(rescaledData)
+
+#~ normalizer = Normalizer(inputCol="featuresL", outputCol="features",p=2.0)
+#~ rescaledData = normalizer.transform(rescaledData)
 
 #---------------------------------------------------------------------------------------
 
 
 #---------------------------------------------------------------------------------------
 #inicio de clustering usando kmeans
-r = rescaledData.cache()
-kmeans = KMeans(k=2, seed=10,initMode = "k-means||")
-model = kmeans.fit(r)
-wssse = model.computeCost(r)
-#~ 
-centers = model.clusterCenters()
-transformed = model.transform(rescaledData) 
-transformed.select ("features").show(truncate=True)   
-transformed.show(truncate=False)
+#~ r = rescaledData.cache()
+#~ kmeans = KMeans(k=2, seed=10,initMode = "k-means||")
+#~ model = kmeans.fit(r)
+#~ wssse = model.computeCost(r)
 
-instancias = transformed.groupBy("prediction").count()
-instancias.show()
+#~ centers = model.clusterCenters()
+#~ transformed = model.transform(rescaledData) 
+#~ transformed.select ("features").show(truncate=True)   
+#~ transformed.show(truncate=False)
+#~ 
+#~ instancias = transformed.groupBy("prediction").count()
+#~ instancias.show()
 	#~ 
 #~ instancias = transformed.groupBy("prediction","label").count().orderBy("count",ascending=False)
 #~ instancias.show()
@@ -162,23 +168,29 @@ instancias.show()
 
 #----------------------------------------------------------------------
 #~ #inicio de clustering usando latent
-#~ lda = LDA(k=2)
-#~ model = lda.fit(rescaledData)
-#~ 
-#~ ll = model.logLikelihood(rescaledData)
-#~ lp = model.logPerplexity(rescaledData)
-#~ 
-#~ print("The lower bound on the log likelihood of the entire corpus: " + str(ll))
-#~ print("The upper bound bound on perplexity: " + str(lp))
-#~ 
-#~ # Describe topics.
-#~ topics = model.describeTopics(10)
-#~ print("The topics described by their top-weighted terms:")
-#~ 
-#~ udfWords=udf(words, ArrayType( StringType() ))
-#~ topics_words = topics.withColumn("words", udfWords("termIndices"))
-#~ topics_words.select ("words").show(truncate=False)
+lda = LDA(k=2)
+model = lda.fit(rescaledData)
 
+ll = model.logLikelihood(rescaledData)
+lp = model.logPerplexity(rescaledData)
+
+
+print("The lower bound on the log likelihood of the entire corpus: " + str(ll))
+print("The upper bound bound on perplexity: " + str(lp))
+
+# Describe topics.
+topics = model.describeTopics(10)
+print("The topics described by their top-weighted terms:")
+
+print model.topicsMatrix()
+
+r=model.transform(rescaledData)
+
+r.select('topicDistribution').show(truncate=False)
+udfWords=udf(group, StringType())
+topics_words = r.withColumn("grupo", udfWords("topicDistribution"))
+instancias = topics_words.groupBy("grupo","label").count().orderBy("count",ascending=False)
+instancias.show()
 
 #----------------------------------------------------------------------	
 
@@ -198,12 +210,3 @@ instancias.show()
 #----------------------------------------------------------------------	
 
 #bisecting kmeans
-#~ gmm = GaussianMixture().setK(2).setSeed(1)
-#~ model = gmm.fit(rescaledData)
-#~ transformed = model.transform(rescaledData)
-#~ transformed.show(truncate=True)
-#~ instancias = transformed.groupBy("prediction").count()	
-#~ instancias.show()
-#~ 
-#~ instancias = transformed.groupBy("prediction","label").count().orderBy("count",ascending=False)
-#~ instancias.show()

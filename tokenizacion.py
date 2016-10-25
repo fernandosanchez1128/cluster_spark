@@ -35,12 +35,12 @@ spark = SparkSession\
 from pyspark.ml.feature import Tokenizer, RegexTokenizer
 
 sentenceDataFrame = spark.createDataFrame([
-    (0, "Spark es un framework de analisis distribuido en memoria, el cual fue desarrolado en la universidad de California < > . ' '."),
+    (0, "Spark es a un framework de analisis Distribuido en memoria, 1 2 3 4 el cual fue desarrolado en la universidad de California < > . ' '."),
     (1, "I wish Java could use case classes"),
     (2, "Logistic,regression,models,are,neat")
 ], ["label", "sentence"])
 #~ tokenizer = Tokenizer(inputCol="sentence", outputCol="words")
 #~ wordsDataFrame = tokenizer.transform(sentenceDataFrame)
-regexTokenizer = RegexTokenizer(inputCol="sentence", outputCol="words", pattern="//W")
+regexTokenizer = RegexTokenizer(inputCol="sentence", outputCol="words", pattern="[^a-zA-Z]")
 wordsDataFrame = regexTokenizer.transform(sentenceDataFrame)
 wordsDataFrame.select("words").show(truncate=False)
