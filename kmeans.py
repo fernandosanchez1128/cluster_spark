@@ -42,8 +42,8 @@ class Clustering:
                 .config("spark.sql.inMemoryColumnarStorage.compressed", "true") \
                 .getOrCreate()
 
-            conf = {"es.resource": ELASTIC_SEARCH_INDEX, "es.nodes": ELASTIC_SEARCH_HOST,
-                    "es.query": "?q=name:alt.atheism name:misc.forsale"}
+            conf = {"es.resource": ELASTIC_SEARCH_INDEX, "es.nodes": ELASTIC_SEARCH_HOST}#,
+                    #"es.query": "?q=name:alt.atheism name:misc.forsale"}
             rdd = sc.newAPIHadoopRDD("org.elasticsearch.hadoop.mr.EsInputFormat",
                                      "org.apache.hadoop.io.NullWritable",
                                      "org.elasticsearch.hadoop.mr.LinkedMapWritable", conf=conf).persist(
@@ -69,7 +69,7 @@ class Clustering:
         self.preprocess()
         self.extract_features()
         self.clustering()
-        self.actualizar_indice()
+        #~ self.actualizar_indice()
 
     def preprocess(self):
         logging.info("Iniciando el preproceamiento del texto")
@@ -129,18 +129,19 @@ class Clustering:
             tfIdf = idfModel.transform(featurizedData)
 
             normalizer = Normalizer(inputCol="featuresInv", outputCol="features", p=2.0)
-            self.rescaledData = normalizer.transform(tfIdf)
+            self.rescaledData = normalizer.transform(tfIdf)	
         except:
             logging.warning("Ha ocurrido un fallo creando el TF-IDF")
 
     def vector(self):
         try:
             logging.info("Creando el Vector")
-            word2Vec = Word2Vec(inputCol="words", outputCol="features")
+            word2Vec = Word2Vec(inputCol="words", outputCol="featuresL")
             model = word2Vec.fit(self.dataCleaned)
-            self.rescaledData = model.transform(self.dataCleaned).persist(StorageLevel.DISK_ONLY)
+            rescaledData = model.transform(self.dataCleaned).persist(StorageLevel.DISK_ONLY)
             self.dataCleaned.unpersist()
-            self.rescaledData.show()
+            normalizer = Normalizer(inputCol="featuresL", outputCol="features",p=2.0)
+            self.rescaledData = normalizer.transform(rescaledData)
 
         except:
             logging.warning("Ha ocurrido un fallo creando el vector")
@@ -148,12 +149,12 @@ class Clustering:
     def counter(self):
         try:
             logging.info("Creando el Vector de conteo")
-            cv = CountVectorizer(inputCol="words", outputCol="features2", minDF=4.0)
+            cv = CountVectorizer(inputCol="words", outputCol="features2", minDF=20.0)
             model = cv.fit(self.dataCleaned)
             featurizedData = model.transform(self.dataCleaned)
             vocabulario = model.vocabulary
 
-            idf = IDF(inputCol="features2", outputCol="featuresL", minDocFreq=10)
+            idf = IDF(inputCol="features2", outputCol="featuresL", minDocFreq=20.0)
             idfModel = idf.fit(featurizedData)
             rescaledData = idfModel.transform(featurizedData)
             normalizer = Normalizer(inputCol="featuresL", outputCol="features",p=2.0)
@@ -186,7 +187,7 @@ class Clustering:
 
     def kmeans(self):
         try:
-            kmeans = KMeans(k=2, initMode="random")
+            kmeans = KMeans(k=self.k, initMode="random")
             model = kmeans.fit(self.rescaledData)
             wssse = model.computeCost(self.rescaledData)
             # ~
@@ -218,10 +219,6 @@ class Clustering:
             response = es.update(index='prueba', doc_type="pdf", id=id, body={"doc": documento})
             es.indices.refresh(index="prueba")
             return "hola"
-
-
-
-
 
         udfWords = udf(grupo, StringType())
         topics_words = self.transformed.withColumn("grupo", udfWords("id", "prediction"))
