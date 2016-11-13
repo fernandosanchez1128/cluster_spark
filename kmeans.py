@@ -42,17 +42,19 @@ class Clustering:
                 .config("spark.sql.inMemoryColumnarStorage.compressed", "true") \
                 .getOrCreate()
 
-            conf = {"es.resource": ELASTIC_SEARCH_INDEX, "es.nodes": ELASTIC_SEARCH_HOST}#,
-                    #"es.query": "?q=name:alt.atheism name:misc.forsale"}
+            conf = {"es.resource": ELASTIC_SEARCH_INDEX, "es.nodes": ELASTIC_SEARCH_HOST}
+                    #"es.query": "?q=name:rec.sport.hockey name:rec.autos"} #name:rec.sport.baseball"}
+                    #"es.query": "?q=name:sci.space name:sci.crypt name:sci.med name:sci.electronics"}
+                    #"es.query": "?q=name:comp.graphics name:rec.motorcycles name:sci.space name:talk.politics.misc"}
             rdd = sc.newAPIHadoopRDD("org.elasticsearch.hadoop.mr.EsInputFormat",
                                      "org.apache.hadoop.io.NullWritable",
                                      "org.elasticsearch.hadoop.mr.LinkedMapWritable", conf=conf).persist(
-                StorageLevel.DISK_ONLY)
+                StorageLevel.DISK_ONLY )
 
             #print rdd.collect()
             rowData = rdd.map(self.convert_to_row)
 
-            self.sentenceData = spark.createDataFrame(rowData).persist(StorageLevel.DISK_ONLY)
+            self.sentenceData = spark.createDataFrame(rowData).persist(StorageLevel.DISK_ONLY )
             print self.sentenceData.count()
         except:
 
@@ -66,10 +68,14 @@ class Clustering:
         return Row(label=nombre, sentence=text,id=id)
 
     def proceso_principal(self):
-        self.preprocess()
-        self.extract_features()
-        self.clustering()
-        #~ self.actualizar_indice()
+        if self.algoritmo == 'lda':
+            self.lda_preprocessing()
+            self.lda(self.vocabulario)
+        else:
+            self.preprocess()
+            self.extract_features()
+            self.clustering()
+            #~ self.actualizar_indice()
 
     def preprocess(self):
         logging.info("Iniciando el preproceamiento del texto")
@@ -88,23 +94,23 @@ class Clustering:
         try:
             logging.info("Tokenizacion del texto")
             tokenizer = RegexTokenizer(inputCol="sentence", outputCol="words_complete", pattern="[^a-zA-Z]")
-            wordsData = tokenizer.transform(self.sentenceData).persist(StorageLevel.DISK_ONLY)
+            wordsData = tokenizer.transform(self.sentenceData).persist(StorageLevel.DISK_ONLY )
             self.sentenceData.unpersist()
             wordsData.select("id").show()
             print "limpieza"
             udfClean = udf(clean, ArrayType(StringType()))
-            dataClean = wordsData.withColumn("cleaned", udfClean("words_complete")).persist(StorageLevel.DISK_ONLY)
+            dataClean = wordsData.withColumn("cleaned", udfClean("words_complete")).persist(StorageLevel.DISK_ONLY )
             wordsData.unpersist()
 
             logging.info("stemming de los tokens")
             udfStemming = udf(stemming, ArrayType(StringType()))
-            dataStemm = dataClean.withColumn("stemm", udfStemming("cleaned")).persist(StorageLevel.DISK_ONLY)
+            dataStemm = dataClean.withColumn("stemm", udfStemming("cleaned")).persist(StorageLevel.DISK_ONLY )
             wordsData.unpersist()
 
             logging.info("Eliminacion de las plabras vacias")
             remover = StopWordsRemover(inputCol="stemm", outputCol="words",
                                        stopWords=StopWordsRemover.loadDefaultStopWords('english'))
-            self.dataCleaned = remover.transform(dataStemm).persist(StorageLevel.DISK_ONLY)
+            self.dataCleaned = remover.transform(dataStemm).persist(StorageLevel.DISK_ONLY )
             self.dataCleaned.select("words").show()
             dataStemm.unpersist()
         except :
@@ -141,7 +147,7 @@ class Clustering:
             rescaledData = model.transform(self.dataCleaned).persist(StorageLevel.DISK_ONLY)
             self.dataCleaned.unpersist()
             normalizer = Normalizer(inputCol="featuresL", outputCol="features",p=2.0)
-            self.rescaledData = normalizer.transform(rescaledData)
+            self.rescaledData = normalizer.transform(rescaledData).persist(StorageLevel.DISK_ONLY)
 
         except:
             logging.warning("Ha ocurrido un fallo creando el vector")
@@ -151,14 +157,14 @@ class Clustering:
             logging.info("Creando el Vector de conteo")
             cv = CountVectorizer(inputCol="words", outputCol="features2", minDF=20.0)
             model = cv.fit(self.dataCleaned)
-            featurizedData = model.transform(self.dataCleaned)
+            featurizedData = model.transform(self.dataCleaned).persist(StorageLevel.DISK_ONLY)
             vocabulario = model.vocabulary
 
             idf = IDF(inputCol="features2", outputCol="featuresL", minDocFreq=20.0)
             idfModel = idf.fit(featurizedData)
-            rescaledData = idfModel.transform(featurizedData)
+            rescaledData = idfModel.transform(featurizedData).persist(StorageLevel.DISK_ONLY)
             normalizer = Normalizer(inputCol="featuresL", outputCol="features",p=2.0)
-            self.rescaledData = normalizer.transform(rescaledData)
+            self.rescaledData = normalizer.transform(rescaledData).persist(StorageLevel.DISK_ONLY)
         except:
             logging.warning("Ha ocurrido un fallo creando el vector de conteo")
 
@@ -166,12 +172,10 @@ class Clustering:
 
 
     def clustering(self):
-        if self.algoritmo == "kmeans":
+        if self.algoritmo == 'kmeans':
             self.kmeans()
-        elif self.algoritmo == "bisecKmeans":
-            self.bisectingKmeans()
         else:
-            print "hola mundo"
+            self.bisectingKmeans()
 
     def bisectingKmeans (self):
         try:
@@ -179,9 +183,11 @@ class Clustering:
             bkm = BisectingKMeans().setK(self.k).setSeed(1)
             model = bkm.fit(self.rescaledData)
             self.transformed = model.transform(self.rescaledData)
+            instancias = self.transformed.groupBy("prediction").count()
+            instancias.show()
             instancias = self.transformed.groupBy("prediction", "label").count().orderBy("count", ascending=False)
             instancias.show(truncate=False)
-            self.transformed.show()
+            #self.transformed.show()
         except:
             logging.warning("algoritmo BisectingKmeans ha fallado")
 
@@ -206,7 +212,93 @@ class Clustering:
 
         except:
             logging.warning("algoritmo Kmeans ha fallado")
-            
+
+    def lda_preprocessing (self):
+
+        def clean(palabras):
+            cleaned = []
+            for palabra in palabras:
+                if len(palabra) > 2:
+                    cleaned.append(palabra)
+            return cleaned
+
+        try:
+            logging.info("Tokenizacion del texto")
+            tokenizer = RegexTokenizer(inputCol="sentence", outputCol="words_complete", pattern="[^a-zA-Z]")
+            wordsData = tokenizer.transform(self.sentenceData).persist(StorageLevel.DISK_ONLY )
+            self.sentenceData.unpersist()
+            wordsData.select("id").show()
+            print "limpieza"
+
+            udfClean = udf(clean, ArrayType(StringType()))
+            dataClean = wordsData.withColumn("cleaned", udfClean("words_complete")).persist(StorageLevel.DISK_ONLY )
+            wordsData.unpersist()
+
+            logging.info("Eliminacion de las plabras vacias")
+            remover = StopWordsRemover(inputCol="cleaned", outputCol="words",
+                                       stopWords=StopWordsRemover.loadDefaultStopWords('english'))
+            self.dataCleaned = remover.transform(dataClean).persist(StorageLevel.DISK_ONLY )
+            self.dataCleaned.select("words").show()
+            dataClean.unpersist()
+        except :
+            logging.warning("Ha ocurrido un fallo en el preprocesamiento del texto")
+        try:
+            logging.info("Creando el Vector de conteo")
+            cv = CountVectorizer(inputCol="words", outputCol="features2", minDF=20.0)
+            model = cv.fit(self.dataCleaned)
+            featurizedData = model.transform(self.dataCleaned).persist(StorageLevel.DISK_ONLY)
+            self.vocabulario = model.vocabulary
+
+            idf = IDF(inputCol="features2", outputCol="featuresL", minDocFreq=20.0)
+            idfModel = idf.fit(featurizedData)
+            rescaledData = idfModel.transform(featurizedData).persist(StorageLevel.DISK_ONLY)
+            normalizer = Normalizer(inputCol="featuresL", outputCol="features",p=2.0)
+            self.rescaledData = normalizer.transform(rescaledData).persist(StorageLevel.DISK_ONLY)
+        except:
+            logging.warning("Ha ocurrido un fallo creando el vector de conteo")
+
+    def lda (self,vocabulario):
+        def group(distri):
+            maximo = 0
+            group = 0
+            i = 0
+            for val in distri:
+                if val > maximo:
+                    group = i
+                    maximo = val
+                i = i + 1
+            return str(group)
+
+        def words(indices):
+            palabras = []
+            for index in indices:
+                palabras.append(vocabulario[index])
+            return palabras
+
+        try :
+            lda = LDA(k=self.k)
+            model = lda.fit(self.rescaledData)
+            # Describe topics.
+            r = model.transform(self.rescaledData)
+            topics = model.describeTopics(10)
+            print("The topics described by their top-weighted terms:")
+            udfWords = udf(words, ArrayType(StringType()))
+            topics_words = topics.withColumn("words", udfWords("termIndices"))
+            topics_words.select("words").show(truncate=False)
+
+
+            #r.select('topicDistribution').show(truncate=False)
+            udfGroup= udf(group, StringType())
+            topics_words = r.withColumn("grupo", udfGroup("topicDistribution"))
+            instancias = topics_words.groupBy("grupo").count()
+            instancias.show()
+            instancias = topics_words.groupBy("grupo", "label").count().orderBy("count", ascending=False)
+            instancias.show()
+        except:
+            print "error realizando lda clustering"
+            logging.warning("error realizando lda clustering")
+
+
          
     def actualizar_indice(self):
 
@@ -227,5 +319,7 @@ class Clustering:
         return "hola"
 
 
-clustering = Clustering("kmeans", "counter", 2)
+clustering = Clustering("kmeans", "counter", 4)     
+#clustering = Clustering("bkm", "counter", 4)
+#clustering = Clustering("lda", "counter", 4)
 clustering.proceso_principal()

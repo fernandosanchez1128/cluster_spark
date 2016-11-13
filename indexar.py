@@ -32,9 +32,9 @@ if __name__ == "__main__":
     # clases = ["alt.atheism", "comp.graphics", "comp.os.ms-windows.misc",  "comp.sys.ibm.pc.hardware", "comp.sys.mac.hardware", "comp.windows.x", "misc.forsale","rec.autos","rec.motorcycles","rec.sport.baseball", "rec.sport.hockey","sci.crypt","sci.electronics","sci.med","sci.space", "soc.religion.christian"]
     #clases = ["talk.politics.guns", "talk.politics.mideast", "talk.politics.misc", "talk.religion.misc"]
     #clases = ["alt.atheism", "misc.forsale"]
-    clases = ["comp.graphics","misc.forsale","rec.motorcycles","alt.atheism",]
+    clases = ["rec.autos","rec.sport.baseball", "rec.sport.hockey"]
     name = "prueba"
-    es.indices.delete(index=name, ignore=[400, 404])
+    #es.indices.delete(index=name, ignore=[400, 404])
 
     # $example on$
     i=0

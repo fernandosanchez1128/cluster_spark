@@ -32,36 +32,37 @@ if __name__ == "__main__":
     # clases = ["alt.atheism", "comp.graphics", "comp.os.ms-windows.misc",  "comp.sys.ibm.pc.hardware", "comp.sys.mac.hardware", "comp.windows.x", "misc.forsale","rec.autos","rec.motorcycles","rec.sport.baseball", "rec.sport.hockey","sci.crypt","sci.electronics","sci.med","sci.space", "soc.religion.christian"]
     #clases = ["talk.politics.guns", "talk.politics.mideast", "talk.politics.misc", "talk.religion.misc"]
     #clases = ["alt.atheism", "misc.forsale"]
-    clases = ["comp.graphics","misc.forsale","rec.motorcycles","alt.atheism",]
-    name = "pdfs2"
+    #clases = ["comp.graphics","misc.forsale","rec.motorcycles","alt.atheism",]
+    name = "pdfs5"
     es.indices.delete(index=name, ignore=[400, 404])
-    path = '/home/master/doc_pruebas/test_reduce2/'
+    path = '/home/master/doc_pruebas/test_reduce5/'
     # $example on$
     i=0
     for base, dirs, files in os.walk(path):
         for filename in files:
-            print (base )
-            print (filename )
-            
-            texto = ''
-            parsedPDF = parser.from_file(base + '/' +filename)
-            texto = parsedPDF["content"]
-            i = i+1
-            document = {
-                'id': i,
-                'name': base,  # nombre del archivo o documento
-                'author': "Fernando",  # author de este archivo o documento
-                'content': texto,  # el contenido de este archivo o documento
-                'owner': "propietario"  # propietario, usuario que crea el indice
-            }
-            response = es.index(index="pdfs2", doc_type="pdf", body=document)
+            try:
+				print (base )
+				print (filename )
+				
+				texto = ''
+				parsedPDF = parser.from_file(base + '/' +filename)
+				texto = parsedPDF["content"]
+				i = i+1
+				document = {
+					'id': i,
+					'name': base,  # nombre del archivo o documento
+					'author': "Fernando",  # author de este archivo o documento
+					'content': texto,  # el contenido de este archivo o documento
+					'owner': "propietario"  # propietario, usuario que crea el indice
+				}
+				response = es.index(index="pdfs5", doc_type="pdf", body=document)
+            except:
+				print ("error")
 
-    es.indices.refresh(index="pdfs2")
+    es.indices.refresh(index="pdfs5")
 
     # synonyms = model.findSynonyms('china', 5)
 
     # for word, cosine_distance in synonyms:
     #    print("{}: {}".format(word, cosine_distance))
     # $example off$
-
-    sc.stop()

@@ -182,7 +182,7 @@ print("The upper bound bound on perplexity: " + str(lp))
 topics = model.describeTopics(10)
 print("The topics described by their top-weighted terms:")
 
-print model.topicsMatrix()
+#print model.topicsMatrix()
 
 r=model.transform(rescaledData)
 

@@ -57,6 +57,13 @@ def convert_to_row(d):
     text =  d[1]['content'] 
     nombre = d[1] ['name']	
     return Row(label = nombre, sentence = text)
+    
+def clean(palabras):
+            cleaned = []
+            for palabra in palabras:
+                if len(palabra) > 2:
+                    cleaned.append(palabra)
+            return cleaned
 
 #~ 
  #~ 
@@ -79,8 +86,8 @@ def convert_to_row(d):
 
 
 #sentenceData = spark.createDataFrame(data, ["label", "sentence"])
-conf = {"es.resource" : "prueba", "es.nodes" : "127.0.0.1",
-        "es.query" : "?q=name:alt.atheism name:misc.forsale" }
+conf = {"es.resource" : "copia", "es.nodes" : "127.0.0.1"}#,
+        #"es.query" : "?q=name:alt.atheism name:misc.forsale" }
 
 
 rdd = sc.newAPIHadoopRDD("org.elasticsearch.hadoop.mr.EsInputFormat",
@@ -89,25 +96,33 @@ rdd = sc.newAPIHadoopRDD("org.elasticsearch.hadoop.mr.EsInputFormat",
 
 
 #print rdd.getStorageLevel()
-rowData = rdd.map(convert_to_row)
+rowData = rdd.map(convert_to_row).persist(StorageLevel.DISK_ONLY)
+rdd.unpersist()
 sentenceData = spark.createDataFrame(rowData).persist(StorageLevel.DISK_ONLY)
+rowData.unpersist()
 print sentenceData.count()
 
-print "tokenizer"
-#tokenizer = RegexTokenizer(inputCol="sentence", outputCol="words_complete", pattern="[^a-zA-Z]")
-tokenizer = RegexTokenizer(inputCol="sentence", outputCol="words_complete", pattern="[^a-zA-Z]")
-wordsData = tokenizer.transform(sentenceData).persist(StorageLevel.DISK_ONLY)
-sentenceData.unpersist()
 
-print "stemming"
-udfStemming=udf(stemming, ArrayType( StringType() ))
-dataStemm = wordsData.withColumn("stemm", udfStemming("words_complete")).persist(StorageLevel.DISK_ONLY)
+tokenizer = RegexTokenizer(inputCol="sentence", outputCol="words_complete", pattern="[^a-zA-Z]")
+wordsData = tokenizer.transform(sentenceData).persist(StorageLevel.DISK_ONLY )
+sentenceData.unpersist()
+#wordsData.select("id").show()
+
+print "limpieza"
+udfClean = udf(clean, ArrayType(StringType()))
+dataClean = wordsData.withColumn("cleaned", udfClean("words_complete")).persist(StorageLevel.DISK_ONLY )
+wordsData.unpersist()
+
+print stemming
+udfStemming = udf(stemming, ArrayType(StringType()))
+dataStemm = dataClean.withColumn("stemm", udfStemming("cleaned")).persist(StorageLevel.DISK_ONLY )
 wordsData.unpersist()
 
 print "words remover"
-remover = StopWordsRemover(inputCol="stemm", outputCol="words",stopWords =  StopWordsRemover.loadDefaultStopWords('english'))
-dataCleaned = remover.transform(dataStemm).persist(StorageLevel.DISK_ONLY)
-dataCleaned.select ("words").show()
+remover = StopWordsRemover(inputCol="stemm", outputCol="words",
+						   stopWords=StopWordsRemover.loadDefaultStopWords('english'))
+dataCleaned = remover.transform(dataStemm).persist(StorageLevel.DISK_ONLY )
+dataCleaned.select("words").show()
 dataStemm.unpersist()
 
 #---------------------------------------------------------------------------------------
@@ -124,25 +139,32 @@ dataStemm.unpersist()
 #---------------------------------------------------------------------------------------
 
 #~ 
-hashingTF = HashingTF(inputCol="words", outputCol="featuresCount", numFeatures=1000)#numero de palabras
-featurizedData = hashingTF.transform(dataCleaned)
+#hashingTF = HashingTF(inputCol="words", outputCol="featuresCount", numFeatures=1000)#numero de palabras
+#featurizedData = hashingTF.transform(dataCleaned)
 
 #---------------------------------------------------------------------------------------
 
 #usado para el clustering de topics
-#~ cv = CountVectorizer(inputCol="words", outputCol="featuresCount")#, minTF=4.0, minDF=20)
-#~ model = cv.fit(dataCleaned)
-#~ featurizedData = model.transform(dataCleaned)
-#~ vocabulario =  model.vocabulary
 
+print "counter"
+cv = CountVectorizer(inputCol="words", outputCol="features2", minDF=20.0)
+model = cv.fit(dataCleaned)
+print "transform"
+featurizedData = model.transform(dataCleaned).persist(StorageLevel.DISK_ONLY)
+print "end transform"
+#vocabulario = model.vocabulary
+dataCleaned.unpersist()
 
-
-idf = IDF(inputCol="featuresCount", outputCol="featuresInv")	
+print "tfidf"
+idf = IDF(inputCol="features2", outputCol="featuresL", minDocFreq=20.0)
 idfModel = idf.fit(featurizedData)
-tfIdf = idfModel.transform(featurizedData)
-#~ 
-normalizer = Normalizer(inputCol="featuresInv", outputCol="features",p=2.0)
-rescaledData = normalizer.transform(tfIdf)
+tfidf = idfModel.transform(featurizedData).persist(StorageLevel.DISK_ONLY)
+featurizedData.unpersist()
+
+print "normalizer"	
+normalizer = Normalizer(inputCol="featuresL", outputCol="features",p=2.0)
+rescaledData = normalizer.transform(tfidf).persist(StorageLevel.DISK_ONLY)
+tfidf.unpersist()
 
 #---------------------------------------------------------------------------------------
 
@@ -151,12 +173,13 @@ rescaledData = normalizer.transform(tfIdf)
 #inicio de clustering usando kmeans
 
 print "kmeans"
-kmeans = KMeans(k=2)
+kmeans = KMeans(k=2,initMode="random")
 model = kmeans.fit(rescaledData)
 wssse = model.computeCost(rescaledData)
 #~ 
 centers = model.clusterCenters()
-transformed = model.transform(rescaledData) 
+transformed = model.transform(rescaledData)
+rescaledData.unpersist()
 #~ #transformed.select ("features").show()   
 
 
@@ -194,3 +217,4 @@ instancias.show(truncate=False)
 #bisecting kmeans
 #bkm = BisectingKMeans().setK(2).setSeed(1)
 #model = bkm.fit(dataset)
+	
