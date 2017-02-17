@@ -35,7 +35,7 @@ if __name__ == "__main__":
     #clases = ["comp.graphics","misc.forsale","rec.motorcycles","alt.atheism",]
     name = "pdfs5"
     es.indices.delete(index=name, ignore=[400, 404])
-    path = '/home/master/doc_pruebas/test_reduce5/'
+    path = '/home/master/doc_pruebas/test_reduce/'
     # $example on$
     i=0
     for base, dirs, files in os.walk(path):

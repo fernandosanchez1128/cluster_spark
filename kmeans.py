@@ -49,12 +49,12 @@ class Clustering:
             rdd = sc.newAPIHadoopRDD("org.elasticsearch.hadoop.mr.EsInputFormat",
                                      "org.apache.hadoop.io.NullWritable",
                                      "org.elasticsearch.hadoop.mr.LinkedMapWritable", conf=conf).persist(
-                StorageLevel.DISK_ONLY )
+                StorageLevel.MEMORY_AND_DISK )
 
             #print rdd.collect()
             rowData = rdd.map(self.convert_to_row)
 
-            self.sentenceData = spark.createDataFrame(rowData).persist(StorageLevel.DISK_ONLY )
+            self.sentenceData = spark.createDataFrame(rowData).persist(StorageLevel.MEMORY_AND_DISK )
             print self.sentenceData.count()
         except:
 
@@ -76,6 +76,7 @@ class Clustering:
             self.extract_features()
             self.clustering()
             #~ self.actualizar_indice()
+            #~ self.escribir_archivos()
 
     def preprocess(self):
         logging.info("Iniciando el preproceamiento del texto")
@@ -94,23 +95,23 @@ class Clustering:
         try:
             logging.info("Tokenizacion del texto")
             tokenizer = RegexTokenizer(inputCol="sentence", outputCol="words_complete", pattern="[^a-zA-Z]")
-            wordsData = tokenizer.transform(self.sentenceData).persist(StorageLevel.DISK_ONLY )
+            wordsData = tokenizer.transform(self.sentenceData).persist(StorageLevel.MEMORY_AND_DISK )
             self.sentenceData.unpersist()
             wordsData.select("id").show()
             print "limpieza"
             udfClean = udf(clean, ArrayType(StringType()))
-            dataClean = wordsData.withColumn("cleaned", udfClean("words_complete")).persist(StorageLevel.DISK_ONLY )
+            dataClean = wordsData.withColumn("cleaned", udfClean("words_complete")).persist(StorageLevel.MEMORY_AND_DISK )
             wordsData.unpersist()
 
             logging.info("stemming de los tokens")
             udfStemming = udf(stemming, ArrayType(StringType()))
-            dataStemm = dataClean.withColumn("stemm", udfStemming("cleaned")).persist(StorageLevel.DISK_ONLY )
+            dataStemm = dataClean.withColumn("stemm", udfStemming("cleaned")).persist(StorageLevel.MEMORY_AND_DISK )
             wordsData.unpersist()
 
             logging.info("Eliminacion de las plabras vacias")
             remover = StopWordsRemover(inputCol="stemm", outputCol="words",
                                        stopWords=StopWordsRemover.loadDefaultStopWords('english'))
-            self.dataCleaned = remover.transform(dataStemm).persist(StorageLevel.DISK_ONLY )
+            self.dataCleaned = remover.transform(dataStemm).persist(StorageLevel.MEMORY_AND_DISK )
             self.dataCleaned.select("words").show()
             dataStemm.unpersist()
         except :
@@ -144,10 +145,10 @@ class Clustering:
             logging.info("Creando el Vector")
             word2Vec = Word2Vec(inputCol="words", outputCol="featuresL")
             model = word2Vec.fit(self.dataCleaned)
-            rescaledData = model.transform(self.dataCleaned).persist(StorageLevel.DISK_ONLY)
+            rescaledData = model.transform(self.dataCleaned).persist(StorageLevel.MEMORY_AND_DISK)
             self.dataCleaned.unpersist()
             normalizer = Normalizer(inputCol="featuresL", outputCol="features",p=2.0)
-            self.rescaledData = normalizer.transform(rescaledData).persist(StorageLevel.DISK_ONLY)
+            self.rescaledData = normalizer.transform(rescaledData).persist(StorageLevel.MEMORY_AND_DISK)
 
         except:
             logging.warning("Ha ocurrido un fallo creando el vector")
@@ -157,14 +158,14 @@ class Clustering:
             logging.info("Creando el Vector de conteo")
             cv = CountVectorizer(inputCol="words", outputCol="features2", minDF=20.0)
             model = cv.fit(self.dataCleaned)
-            featurizedData = model.transform(self.dataCleaned).persist(StorageLevel.DISK_ONLY)
+            featurizedData = model.transform(self.dataCleaned).persist(StorageLevel.MEMORY_AND_DISK)
             vocabulario = model.vocabulary
 
             idf = IDF(inputCol="features2", outputCol="featuresL", minDocFreq=20.0)
             idfModel = idf.fit(featurizedData)
-            rescaledData = idfModel.transform(featurizedData).persist(StorageLevel.DISK_ONLY)
+            rescaledData = idfModel.transform(featurizedData).persist(StorageLevel.MEMORY_AND_DISK)
             normalizer = Normalizer(inputCol="featuresL", outputCol="features",p=2.0)
-            self.rescaledData = normalizer.transform(rescaledData).persist(StorageLevel.DISK_ONLY)
+            self.rescaledData = normalizer.transform(rescaledData).persist(StorageLevel.MEMORY_AND_DISK)
         except:
             logging.warning("Ha ocurrido un fallo creando el vector de conteo")
 
@@ -202,13 +203,13 @@ class Clustering:
             # ~ #transformed.select ("features").show()
 
 
-            instancias = self.transformed.groupBy("prediction").count()
-            instancias.show()
-            # ~
-            # ~ for center in centers:
-            # ~ print center
-            instancias = self.transformed.groupBy("prediction", "label").count().orderBy("count", ascending=False)
-            instancias.show(truncate=False)
+            #instancias = self.transformed.groupBy("prediction").count()
+            #instancias.show()
+            ## ~
+            ## ~ for center in centers:
+            ## ~ print center
+            #instancias = self.transformed.groupBy("prediction", "label").count().orderBy("count", ascending=False)
+            #instancias.show(truncate=False)
 
         except:
             logging.warning("algoritmo Kmeans ha fallado")
@@ -225,19 +226,19 @@ class Clustering:
         try:
             logging.info("Tokenizacion del texto")
             tokenizer = RegexTokenizer(inputCol="sentence", outputCol="words_complete", pattern="[^a-zA-Z]")
-            wordsData = tokenizer.transform(self.sentenceData).persist(StorageLevel.DISK_ONLY )
+            wordsData = tokenizer.transform(self.sentenceData).persist(StorageLevel.MEMORY_AND_DISK )
             self.sentenceData.unpersist()
             wordsData.select("id").show()
             print "limpieza"
 
             udfClean = udf(clean, ArrayType(StringType()))
-            dataClean = wordsData.withColumn("cleaned", udfClean("words_complete")).persist(StorageLevel.DISK_ONLY )
+            dataClean = wordsData.withColumn("cleaned", udfClean("words_complete")).persist(StorageLevel.MEMORY_AND_DISK )
             wordsData.unpersist()
 
             logging.info("Eliminacion de las plabras vacias")
             remover = StopWordsRemover(inputCol="cleaned", outputCol="words",
                                        stopWords=StopWordsRemover.loadDefaultStopWords('english'))
-            self.dataCleaned = remover.transform(dataClean).persist(StorageLevel.DISK_ONLY )
+            self.dataCleaned = remover.transform(dataClean).persist(StorageLevel.MEMORY_AND_DISK )
             self.dataCleaned.select("words").show()
             dataClean.unpersist()
         except :
@@ -246,14 +247,14 @@ class Clustering:
             logging.info("Creando el Vector de conteo")
             cv = CountVectorizer(inputCol="words", outputCol="features2", minDF=20.0)
             model = cv.fit(self.dataCleaned)
-            featurizedData = model.transform(self.dataCleaned).persist(StorageLevel.DISK_ONLY)
+            featurizedData = model.transform(self.dataCleaned).persist(StorageLevel.MEMORY_AND_DISK)
             self.vocabulario = model.vocabulary
 
             idf = IDF(inputCol="features2", outputCol="featuresL", minDocFreq=20.0)
             idfModel = idf.fit(featurizedData)
-            rescaledData = idfModel.transform(featurizedData).persist(StorageLevel.DISK_ONLY)
+            rescaledData = idfModel.transform(featurizedData).persist(StorageLevel.MEMORY_AND_DISK)
             normalizer = Normalizer(inputCol="featuresL", outputCol="features",p=2.0)
-            self.rescaledData = normalizer.transform(rescaledData).persist(StorageLevel.DISK_ONLY)
+            self.rescaledData = normalizer.transform(rescaledData).persist(StorageLevel.MEMORY_AND_DISK)
         except:
             logging.warning("Ha ocurrido un fallo creando el vector de conteo")
 
@@ -317,6 +318,10 @@ class Clustering:
         topics_words.show()
 
         return "hola"
+        
+
+	
+   
 
 
 clustering = Clustering("kmeans", "counter", 4)     
